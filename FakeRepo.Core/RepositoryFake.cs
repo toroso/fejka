@@ -89,7 +89,7 @@ public abstract class RepositoryFake<TId, TEntity>
     private IEnumerable<KeyValuePair<TId, TEntity>> GetAllKeyPairsBy(Expression<Func<TEntity, bool>> filterExpr)
     {
         var filterFunc = filterExpr.Compile();
-        return _table.Where(kvp => filterFunc(kvp.Value)).Select(x => KeyValuePair.Create(x.Key, _serializer.Clone(x.Value))).ToArray();
+        return _table.Where(kvp => filterFunc(kvp.Value)).Select(x => new KeyValuePair<TId, TEntity>(x.Key, _serializer.Clone(x.Value))).ToArray();
     }
 
     private void Insert(TId id, TEntity entity)
