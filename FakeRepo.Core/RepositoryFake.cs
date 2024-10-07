@@ -24,7 +24,12 @@ public abstract class RepositoryFake<TId, TEntity>
         _config = config;
     }
 
-    protected Func<TEntity, TId> GetId => _config.GetIdFunc.Compile();
+    protected Func<TEntity, TId> GetId => entity =>
+    {
+        if (entity == null)
+            throw new ArgumentNullException(nameof(entity), "Entity cannot be null");
+        return _config.GetIdFunc.Compile()(entity);
+    };
     protected Action<TEntity, TId> SetId => (entity, id) =>
     {
         var propertyName = _config.GetIdFunc.GetMemberInfo().Name;
@@ -150,6 +155,9 @@ public abstract class RepositoryFake<TId, TEntity>
 
     protected class RepositoryConfiguration
     {
+        /// <summary>
+        /// Specifies the primary key for the entity
+        /// </summary>
         public Expression<Func<TEntity, TId>> GetIdFunc { get; set; }
     }
 }

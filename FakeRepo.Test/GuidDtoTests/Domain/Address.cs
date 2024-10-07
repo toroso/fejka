@@ -1,4 +1,4 @@
-namespace FakeRepo.Test.GuidTests.Domain;
+namespace FakeRepo.Test.GuidDtoTests.Domain;
 
 public class Address
 {

@@ -16,5 +16,8 @@ public abstract class GuidRepositoryFake<TEntity> : RepositoryFake<Guid, TEntity
     public Task UpdateAsync(TEntity entity, CancellationToken ct) => base.UpdateAsync(GetId(entity), entity, ct);
     public Task UpsertAsync(TEntity entity, CancellationToken ct) => base.UpsertAsync(GetId(entity), entity, ct);
 
+    /// <summary>
+    /// Method for populating the database from unit tests
+    /// </summary>
     protected TEntity Add(Func<Guid, TEntity> buildAction) => Add(buildAction(Guid.NewGuid()));
 }

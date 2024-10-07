@@ -1,11 +1,11 @@
 using System;
-using FakeRepo.Test.GuidTests.Domain;
+using FakeRepo.Test.GuidDtoTests.Domain;
 
-namespace FakeRepo.Test.GuidTests.AutomationLayer;
+namespace FakeRepo.Test.GuidDtoTests.AutomationLayer;
 
 public static class DomainBuilder
 {
-    public static User Create(Action<User> customizeAction)
+    public static UserGuidDto Create(Action<UserGuidDto> customizeAction = null)
     {
         return DtoBuilder.Create(e =>
         {

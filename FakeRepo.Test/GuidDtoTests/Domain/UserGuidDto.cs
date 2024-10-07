@@ -1,8 +1,8 @@
 using System;
 
-namespace FakeRepo.Test.GuidTests.Domain;
+namespace FakeRepo.Test.GuidDtoTests.Domain;
 
-public class User
+public class UserGuidDto
 {
     public Guid Id { get; set; }
     public string Name { get; set; }
