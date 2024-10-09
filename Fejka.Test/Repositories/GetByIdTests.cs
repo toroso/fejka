@@ -4,11 +4,11 @@ using System.Threading.Tasks;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace Fejka.Test.GuidDtoTests;
+namespace Fejka.Test.Repositories;
 
 [TestFixture]
 [SuppressMessage("ReSharper", "MethodHasAsyncOverload")]
-public class GetByIdTests : UserRepositoryTestsBase
+public class GetByIdTests : UserGuidDtoRepositoryTestsBase
 {
     [Test]
     public async Task Given_ExistingUserInDatabase_When_GetById_Then_UserIsReturned()

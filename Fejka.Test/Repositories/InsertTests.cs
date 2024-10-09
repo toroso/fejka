@@ -1,21 +1,21 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using Fejka.Test.GuidDtoTests.AutomationLayer;
-using Fejka.Test.GuidDtoTests.Domain;
+using Fejka.Test.Repositories.AutomationLayer;
+using Fejka.Test.Repositories.Domain;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace Fejka.Test.GuidDtoTests;
+namespace Fejka.Test.Repositories;
 
 [TestFixture]
 [SuppressMessage("ReSharper", "MethodHasAsyncOverload")]
-public class InsertTests : UserRepositoryTestsBase
+public class InsertTests : UserGuidDtoRepositoryTestsBase
 {
     [Test]
     public async Task Given_NewUser_When_Insert_Then_UserIsAddedToDatabase()
     {
-        var user = DomainBuilder.Create();
+        var user = DomainBuilder.CreateGuidUser();
 
         await InsertAsync(user);
 
@@ -27,7 +27,7 @@ public class InsertTests : UserRepositoryTestsBase
     {
         var user = Add();
 
-        var duplicateUser = DomainBuilder.Create(u => u.Id = user.Id);
+        var duplicateUser = DomainBuilder.CreateGuidUser(u => u.Id = user.Id);
 
         await InvokingInsertAsync(duplicateUser)
             .Should().ThrowAsync<InvalidOperationException>()
@@ -43,7 +43,7 @@ public class InsertTests : UserRepositoryTestsBase
     [Test]
     public async Task Given_InsertedUser_When_ModifyingInsertedUser_Then_DatabaseRemainsUnchanged()
     {
-        var user = DomainBuilder.Create(e => e.Name = "Original Name");
+        var user = DomainBuilder.CreateGuidUser(e => e.Name = "Original Name");
         await InsertAsync(user);
 
         user.Name = "Modified Name";

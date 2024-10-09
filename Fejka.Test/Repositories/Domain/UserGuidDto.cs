@@ -1,6 +1,6 @@
 using System;
 
-namespace Fejka.Test.GuidDtoTests.Domain;
+namespace Fejka.Test.Repositories.Domain;
 
 public class UserGuidDto
 {

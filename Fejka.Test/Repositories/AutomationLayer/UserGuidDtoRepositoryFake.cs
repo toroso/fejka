@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Fejka.Repository;
-using Fejka.Test.GuidDtoTests.Domain;
+using Fejka.Test.Repositories.Domain;
 
-namespace Fejka.Test.GuidDtoTests.AutomationLayer;
+namespace Fejka.Test.Repositories.AutomationLayer;
 
 public interface IUserGuidDtoRepository
 {
@@ -27,5 +27,5 @@ public class UserGuidDtoRepositoryFake : GuidRepositoryFake<UserGuidDto>, IUserG
         => GetAllByAsync(e => e.Name == name, ct);
 
     public UserGuidDto Add(Action<UserGuidDto> customizeAction = null)
-        => base.Add(_ => DomainBuilder.Create(customizeAction));
+        => base.Add(_ => DomainBuilder.CreateGuidUser(customizeAction));
 }

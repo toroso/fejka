@@ -4,11 +4,11 @@ using System.Threading.Tasks;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace Fejka.Test.GuidDtoTests;
+namespace Fejka.Test.Repositories;
 
 [TestFixture]
 [SuppressMessage("ReSharper", "MethodHasAsyncOverload")]
-public class GetAllByNameTests : UserRepositoryTestsBase
+public class GetAllByNameTests : UserGuidDtoRepositoryTestsBase
 {
     [Test]
     public async Task Given_MultipleUsersWithSameName_When_GetAllByName_Then_ReturnsCorrectUsers()

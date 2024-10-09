@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Fejka.Test.GuidDtoTests.AutomationLayer;
-using Fejka.Test.GuidDtoTests.Domain;
+using Fejka.Test.Repositories.AutomationLayer;
+using Fejka.Test.Repositories.Domain;
 using NUnit.Framework;
 
-namespace Fejka.Test.GuidDtoTests;
+namespace Fejka.Test.Repositories;
 
-public abstract class UserRepositoryTestsBase
+public abstract class UserGuidDtoRepositoryTestsBase
 {
     private UserGuidDtoRepositoryFake _users;
 
@@ -33,6 +33,5 @@ public abstract class UserRepositoryTestsBase
 
     protected UserGuidDto Add(Action<UserGuidDto> customizeAction = null) => _users.Add(customizeAction);
 
-       
     protected UserGuidDto GetById(Guid id) => _users.GetById(id);
 }

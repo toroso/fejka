@@ -1,15 +1,15 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using Fejka.Test.GuidDtoTests.AutomationLayer;
+using Fejka.Test.Repositories.AutomationLayer;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace Fejka.Test.GuidDtoTests;
+namespace Fejka.Test.Repositories;
 
 [TestFixture]
 [SuppressMessage("ReSharper", "MethodHasAsyncOverload")]
-public class UpdateTests : UserRepositoryTestsBase
+public class UpdateTests : UserGuidDtoRepositoryTestsBase
 {
     [Test]
     public async Task Given_ExistingUser_When_Update_Then_UserIsUpdatedInDatabase()
@@ -25,7 +25,7 @@ public class UpdateTests : UserRepositoryTestsBase
     [Test]
     public async Task Given_NonExistentUser_When_Update_Then_NothingIsChanged()
     {
-        var nonExistentUser = DomainBuilder.Create();
+        var nonExistentUser = DomainBuilder.CreateGuidUser();
 
         await UpdateAsync(nonExistentUser);
 

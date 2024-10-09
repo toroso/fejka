@@ -32,6 +32,8 @@ public abstract class IntRepositoryFake<TEntity> : RepositoryFake<int, TEntity>
     public async Task<int> UpsertAsync(TEntity entity, CancellationToken ct)
     {
         var id = GetId(entity);
+        if (id == 0) id = UniqueIntId();
+        SetId(entity, id);
         await UpsertAsync(id, entity, ct);
         return id;
     }

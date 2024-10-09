@@ -1,20 +1,20 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using Fejka.Test.GuidDtoTests.AutomationLayer;
+using Fejka.Test.Repositories.AutomationLayer;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace Fejka.Test.GuidDtoTests;
+namespace Fejka.Test.Repositories;
 
 [TestFixture]
 [SuppressMessage("ReSharper", "MethodHasAsyncOverload")]
-public class UpsertTests : UserRepositoryTestsBase
+public class UpsertTests : UserGuidDtoRepositoryTestsBase
 {
     [Test]
     public async Task Given_NewUser_When_Upsert_Then_UserIsInserted()
     {
-        var user = DomainBuilder.Create();
+        var user = DomainBuilder.CreateGuidUser();
 
         await UpsertAsync(user);
 
