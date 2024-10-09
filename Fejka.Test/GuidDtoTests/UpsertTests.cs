@@ -45,6 +45,18 @@ public class UpsertTests : UserRepositoryTestsBase
         GetById(newId).Should().BeEquivalentTo(user);
         GetById(user.Id).Should().NotBeNull();
     }
+    
+    [Test]
+    public async Task Given_UpsertedUser_When_ModifyingUpsertedUser_Then_DatabaseRemainsUnchanged()
+    {
+        var user = Add(e => e.Name = "Original Name");
+        user.Name = "Upserted Name";
+        await UpsertAsync(user);
+
+        user.Name = "Modified Name";
+
+        GetById(user.Id).Name.Should().Be("Upserted Name");
+    }
 
     [Test]
     public async Task Given_NullUser_When_Upsert_Then_ThrowsArgumentNullException()

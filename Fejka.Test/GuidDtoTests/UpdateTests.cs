@@ -31,6 +31,18 @@ public class UpdateTests : UserRepositoryTestsBase
 
         GetById(nonExistentUser.Id).Should().BeNull();
     }
+    
+    [Test]
+    public async Task Given_UpdatedUser_When_ModifyingUpdatedUser_Then_DatabaseRemainsUnchanged()
+    {
+        var user = Add(e => e.Name = "Original Name");
+        user.Name = "Updated Name";
+        await UpdateAsync(user);
+
+        user.Name = "Modified Name";
+
+        GetById(user.Id).Name.Should().Be("Updated Name");
+    }
 
     [Test]
     public async Task Given_NullUser_When_Update_Then_ThrowsArgumentNullException()

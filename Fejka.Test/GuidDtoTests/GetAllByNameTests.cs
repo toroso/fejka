@@ -1,3 +1,5 @@
+using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using System.Threading.Tasks;
 using FluentAssertions;
 using NUnit.Framework;
@@ -5,6 +7,7 @@ using NUnit.Framework;
 namespace Fejka.Test.GuidDtoTests;
 
 [TestFixture]
+[SuppressMessage("ReSharper", "MethodHasAsyncOverload")]
 public class GetAllByNameTests : UserRepositoryTestsBase
 {
     [Test]
@@ -57,5 +60,16 @@ public class GetAllByNameTests : UserRepositoryTestsBase
         var result = await GetAllByNameAsync("Bob");
 
         result.Should().ContainSingle().Which.Should().BeEquivalentTo(user2);
+    }
+
+    [Test]
+    public async Task Given_UserInDatabase_When_ModifyingFetchedUser_Then_DatabaseRemainsUnchanged()
+    {
+        var user = Add(e => e.Name = "Original Name");
+
+        var fetchedUsers = await GetAllByNameAsync("Original Name");
+        fetchedUsers.Single().Name = "Modified Name";
+
+        GetById(user.Id).Name.Should().Be("Original Name");
     }
 }

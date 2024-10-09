@@ -39,4 +39,15 @@ public class InsertTests : UserRepositoryTestsBase
     {
         await InvokingInsertAsync(null).Should().ThrowAsync<ArgumentNullException>();
     }
+    
+    [Test]
+    public async Task Given_InsertedUser_When_ModifyingInsertedUser_Then_DatabaseRemainsUnchanged()
+    {
+        var user = DomainBuilder.Create(e => e.Name = "Original Name");
+        await InsertAsync(user);
+
+        user.Name = "Modified Name";
+
+        GetById(user.Id).Name.Should().Be("Original Name");
+    }
 }
