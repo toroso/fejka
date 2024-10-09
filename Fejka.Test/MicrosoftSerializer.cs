@@ -1,7 +1,7 @@
 using System.Text.Json;
-using FakeRepo.Core;
+using Fejka.Repository;
 
-namespace FakeRepo.Test;
+namespace Fejka.Test;
 
 public class MicrosoftSerializer : ISerializer
 {

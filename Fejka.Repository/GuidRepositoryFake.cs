@@ -2,7 +2,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace FakeRepo.Core;
+namespace Fejka.Repository;
 
 public abstract class GuidRepositoryFake<TEntity> : RepositoryFake<Guid, TEntity>
     where TEntity : class

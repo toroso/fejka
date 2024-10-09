@@ -1,4 +1,4 @@
-namespace FakeRepo.Core;
+namespace Fejka.Repository;
 
 public interface ISerializer
 {

@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeRepo.Core", "FakeRepo.Core\FakeRepo.Core.csproj", "{EBDC9DE3-FBE5-4328-A0B3-20D0C0511CC7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fejka.Repository", "Fejka.Repository\Fejka.Repository.csproj", "{EBDC9DE3-FBE5-4328-A0B3-20D0C0511CC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeRepo.Test", "FakeRepo.Test\FakeRepo.Test.csproj", "{84D433A5-C7E9-43B4-8D64-B0AF22148FEB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fejka.Test", "Fejka.Test\Fejka.Test.csproj", "{84D433A5-C7E9-43B4-8D64-B0AF22148FEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

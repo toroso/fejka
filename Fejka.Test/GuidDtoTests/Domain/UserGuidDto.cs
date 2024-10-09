@@ -1,6 +1,6 @@
 using System;
 
-namespace FakeRepo.Test.GuidDtoTests.Domain;
+namespace Fejka.Test.GuidDtoTests.Domain;
 
 public class UserGuidDto
 {

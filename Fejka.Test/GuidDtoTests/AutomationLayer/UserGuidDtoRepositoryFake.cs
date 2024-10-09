@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using FakeRepo.Core;
-using FakeRepo.Test.GuidDtoTests.Domain;
+using Fejka.Repository;
+using Fejka.Test.GuidDtoTests.Domain;
 
-namespace FakeRepo.Test.GuidDtoTests.AutomationLayer;
+namespace Fejka.Test.GuidDtoTests.AutomationLayer;
 
 public interface IUserGuidDtoRepository
 {

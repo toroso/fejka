@@ -1,11 +1,11 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using FakeRepo.Test.GuidDtoTests.AutomationLayer;
+using Fejka.Test.GuidDtoTests.AutomationLayer;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace FakeRepo.Test.GuidDtoTests;
+namespace Fejka.Test.GuidDtoTests;
 
 [TestFixture]
 [SuppressMessage("ReSharper", "MethodHasAsyncOverload")]

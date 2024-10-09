@@ -1,6 +1,6 @@
 using System;
 
-namespace FakeRepo.Test;
+namespace Fejka.Test;
 
 public static class DtoBuilder
 {

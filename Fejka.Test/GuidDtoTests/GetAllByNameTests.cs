@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace FakeRepo.Test.GuidDtoTests;
+namespace Fejka.Test.GuidDtoTests;
 
 [TestFixture]
 public class GetAllByNameTests : UserRepositoryTestsBase

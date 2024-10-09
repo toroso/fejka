@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace FakeRepo.Test.GuidDtoTests;
+namespace Fejka.Test.GuidDtoTests;
 
 [TestFixture]
 [SuppressMessage("ReSharper", "MethodHasAsyncOverload")]

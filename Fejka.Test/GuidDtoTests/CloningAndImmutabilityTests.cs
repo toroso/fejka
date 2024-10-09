@@ -1,9 +1,9 @@
-using FakeRepo.Test.GuidDtoTests.AutomationLayer;
-using FakeRepo.Test.GuidDtoTests.Domain;
+using Fejka.Test.GuidDtoTests.AutomationLayer;
+using Fejka.Test.GuidDtoTests.Domain;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace FakeRepo.Test.GuidDtoTests;
+namespace Fejka.Test.GuidDtoTests;
 
 [TestFixture]
 public class CloningAndImmutabilityTests : UserRepositoryTestsBase

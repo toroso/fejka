@@ -4,9 +4,9 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
-using FakeRepo.Core.Impl;
+using Fejka.Repository.Impl;
 
-namespace FakeRepo.Core;
+namespace Fejka.Repository;
 
 public abstract class RepositoryFake<TId, TEntity>
     where TEntity : class

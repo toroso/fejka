@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FakeRepo.Core\FakeRepo.Core.csproj" />
+    <ProjectReference Include="..\Fejka.Repository\Fejka.Repository.csproj" />
   </ItemGroup>
 
   <ItemGroup>

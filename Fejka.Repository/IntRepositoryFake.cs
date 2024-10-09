@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace FakeRepo.Core;
+namespace Fejka.Repository;
 
 public abstract class IntRepositoryFake<TEntity> : RepositoryFake<int, TEntity>
     where TEntity : class

@@ -1,7 +1,7 @@
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace FakeRepo.Core.Impl;
+namespace Fejka.Repository.Impl;
 
 internal static class ExpressionExtensions
 {
