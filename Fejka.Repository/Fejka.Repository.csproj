@@ -4,6 +4,13 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Fejka.Repository</RootNamespace>
     <LangVersion>10</LangVersion>
+    <PackageId>Fejka.Repository</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Torbjörn Kalin</Authors>
+    <Description>An in-memory repository used for unit testing</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>http://github.com/toroso/fejka</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
 </Project>
