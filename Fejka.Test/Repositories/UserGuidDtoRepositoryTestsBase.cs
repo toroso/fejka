@@ -31,6 +31,9 @@ public abstract class UserGuidDtoRepositoryTestsBase
     protected Task UpsertAsync(UserGuidDto entity) => _users.UpsertAsync(entity, CancellationToken.None);
     protected Func<Task> InvokingUpsertAsync(UserGuidDto entity) => async () => await UpsertAsync(entity);
 
+    protected Task DeleteByIdAsync(Guid id) => _users.DeleteByIdAsync(id, CancellationToken.None);
+    protected Func<Task> InvokingDeleteByIdAsync(Guid id) => async () => await DeleteByIdAsync(id);
+
     protected UserGuidDto Add(Action<UserGuidDto> customizeAction = null) => _users.Add(customizeAction);
 
     protected UserGuidDto GetById(Guid id) => _users.GetById(id);
