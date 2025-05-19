@@ -63,6 +63,12 @@ public abstract class RepositoryFake<TId, TEntity>
         return Task.CompletedTask;
     }
 
+    public Task DeleteByIdAsync(TId id, CancellationToken ct)
+    {
+        DeleteById(id);
+        return Task.CompletedTask;
+    }
+
     /// <summary>
     /// Convenience methods to be used in tests to avoid awaiting
     /// </summary>
@@ -123,6 +129,14 @@ public abstract class RepositoryFake<TId, TEntity>
         else
         {
             Insert(id, entity);
+        }
+    }
+
+    private void DeleteById(TId id)
+    {
+        if (_table.ContainsKey(id))
+        {
+            _table.Remove(id);
         }
     }
 

@@ -14,6 +14,7 @@ public interface IUserGuidDtoRepository
     Task InsertAsync(UserGuidDto entity, CancellationToken ct);
     Task UpdateAsync(UserGuidDto entity, CancellationToken ct);
     Task UpsertAsync(UserGuidDto entity, CancellationToken ct);
+    Task DeleteByIdAsync(Guid id, CancellationToken ct);
 }
 
 public class UserGuidDtoRepositoryFake : GuidRepositoryFake<UserGuidDto>, IUserGuidDtoRepository

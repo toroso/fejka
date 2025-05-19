@@ -14,6 +14,7 @@ public interface IUserIntDtoRepository
     Task<int> InsertAsync(UserIntDto entity, CancellationToken ct);
     Task UpdateAsync(UserIntDto entity, CancellationToken ct);
     Task<int> UpsertAsync(UserIntDto entity, CancellationToken ct);
+    Task DeleteByIdAsync(int id, CancellationToken ct);
 }
 
 public class UserIntDtoRepositoryFake : IntRepositoryFake<UserIntDto>, IUserIntDtoRepository
